@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="To-Do List desenvolvida para atividade de Engenharia de Prompt aplicada ao ciclo de vida do software." />
+  <title>To-Do List | Engenharia de Prompt</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Container principal da aplicação -->
+  <main class="app-container">
+    <!-- Cabeçalho do projeto -->
+    <header class="app-header">
+      <h1>Lista de Tarefas</h1>
+      <p>
+        Organize suas atividades por prioridade e acompanhe o que já foi concluído.
+      </p>
+    </header>
+
+    <!-- Formulário de cadastro de tarefas -->
+    <section class="task-form-section" aria-labelledby="form-title">
+      <h2 id="form-title">Adicionar nova tarefa</h2>
+
+      <form id="task-form" class="task-form">
+        <!-- Campo de descrição da tarefa -->
+        <div class="form-group">
+          <label for="task-input">Descrição da tarefa</label>
+          <input
+            type="text"
+            id="task-input"
+            name="task"
+            placeholder="Digite sua tarefa"
+            maxlength="80"
+            required
+          />
+        </div>
+
+        <!-- Seletor de prioridade -->
+        <div class="form-group">
+          <label for="priority-select">Prioridade</label>
+          <select id="priority-select" name="priority" required>
+            <option value="baixa">Baixa</option>
+            <option value="media">Média</option>
+            <option value="alta">Alta</option>
+          </select>
+        </div>
+
+        <!-- Botão de envio -->
+        <button type="submit" class="btn-add">Adicionar tarefa</button>
+      </form>
+
+      <!-- Mensagem de feedback para o usuário -->
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <!-- Área de exibição das tarefas -->
+    <section class="task-list-section" aria-labelledby="list-title">
+      <div class="list-header">
+        <h2 id="list-title">Tarefas cadastradas</h2>
+        <button type="button" id="clear-completed" class="btn-secondary">
+          Remover concluídas
+        </button>
+      </div>
+
+      <!-- Lista onde as tarefas serão inseridas dinamicamente -->
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+      <!-- Estado vazio quando não houver tarefas -->
+      <p id="empty-state" class="empty-state">
+        Nenhuma tarefa adicionada ainda.
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
